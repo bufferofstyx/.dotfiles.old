@@ -1,0 +1,5 @@
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+
+export FZF_DEFAULT_OPTS="--height 100% --layout=reverse --ansi"
+#export FZF_DEFAULT_OPTS="--height 100% --layout=reverse --ansi --preview='bat --color=always --style=grid --line-range :300 {}'"
