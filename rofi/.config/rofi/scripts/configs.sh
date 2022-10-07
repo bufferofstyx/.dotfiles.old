@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 EDITOR="kitty -e nano"
+DOTFILES="$HOME/.dotfiles"
 
 declare -A config_list
-config_list[tmux]="$HOME/.tmux.conf"
-config_list[zsh-profile]="$HOME/.config/zsh/.zsh-profile"
-config_list[zsh-aliases]="$HOME/.config/zsh/zsh-aliases"
-config_list[ohmyzh]="$HOME/.oh-my-zsh"
+config_list[tmux]="$DOTFILES/tmux/.tmux.conf"
+config_list[zsh-profile]="$DOTFILES/zsh/.zsh-profile"
+config_list[zsh-aliases]="$DOTFILES/zsh/.zsh-aliases"
 config_list[bashrc]="$HOME/.bashrc"
-config_list[zshrc]="$HOME/.config/zsh/.zshrc"
-config_list[install.sh]="$HOME/.dotfiles/install.sh"
-config_list[i3]="$HOME/.config/i3/config"
-config_list[starship]="$HOME/.config/starship.toml"
-config_list[kitty]="$HOME/.config/kitty/kitty.conf"
-config_list[confedit]="$HOME/.config/rofi/scripts/configs.sh"
+config_list[zshrc]="$DOTFILES/zsh/.zshrc"
+config_list[install.sh]="$DOTFILES/install.sh"
+config_list[i3]="$DOTFILES/i3/.config/i3/config"
+config_list[starship]="$DOTFILES/starship/.config/starship.toml"
+config_list[kitty]="$DOTFILES/kitty/.config/kitty/kitty.conf"
+config_list[confedit]="$DOTFILES/rofi/.config/rofi/scripts/configs.sh"
 config_list[quit]="quit"
 
 choice=$(printf '%s\n' "${!config_list[@]}" | rofi -dmenu -i 20 -p 'Editing Config')
