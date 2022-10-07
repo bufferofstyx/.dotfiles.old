@@ -99,5 +99,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/you-should-use
 
+cd
+mkdir ~/repos
+mkdir ~/work
+mkdir ~/personal
+mkdir ~/work/projects
+mkdir ~/personal/projects
 
 printf "\e[1;32mYou can now reboot! Thanks you.\e[0m\n"

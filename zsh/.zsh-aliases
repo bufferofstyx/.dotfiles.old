@@ -4,9 +4,9 @@ bindkey -s ^f "tt^M"
 # SHORTCUT aliases
 alias c='clear'
 alias h='history | fzf'
-alias r='source ~/.config/zsh/.zshrc'
+alias r='source ~/.zshrc'
 alias ls='exa --long --color=always --group-directories-first --icons'
-alias cat='bat'
+alias cat='batcat'
 alias zz='z -'
 
 #When CD LS after.
