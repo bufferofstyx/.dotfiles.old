@@ -51,10 +51,6 @@ sudo ninja install
 #Install bumblebee-status bar
 pip install --user bumblebee-status
 
-#Install Oh-my-zsh in ~
-cd
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 #Install starship ~
 cd
 curl -sS https://starship.rs/install.sh | sh
@@ -88,5 +84,9 @@ sudo cp ./temp /usr/share/xsessions/i3.desktop;rm ./temp
 # End of script for default config
 
 sudo apt autoremove
+
+#Install Oh-my-zsh in ~
+cd
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 printf "\e[1;32mYou can now reboot! Thanks you.\e[0m\n"
