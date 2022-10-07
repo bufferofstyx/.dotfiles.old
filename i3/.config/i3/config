@@ -299,7 +299,7 @@ smart_borders yes
 focus_follows_mouse yes
 
 # Autostart applications
-exec --no-startup-id feh --bg-fill="~/.dotfiles/backgrounds/lighthouse.jpg"
+exec --no-startup-id feh --bg-fill ~/.dotfiles/backgrounds/lighthouse.jpg &
 exec --no-startup-id numlockx on
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pulseaudio

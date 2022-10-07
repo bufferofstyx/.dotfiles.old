@@ -2,10 +2,24 @@
 
 #Installing Packages
 sudo apt update -y && sudo apt upgrade -y
+
+sudo apt install -y stow
+
+stow bin
+stow bumblebee-status
+stow dunst
+stow i3
+stow kitty
+stow rofi
+stow starship
+stow tmux
+stow zsh
+
 sudo apt install -y xorg
 sudo apt install -y curl
-sudo apt install -y stow
+sudo apt install -y tmux
 sudo apt install -y python3-pip
+sudo apt install -y bat
 sudo apt install -y python3-tk
 sudo apt install -y thunar
 sudo apt install -y xfce4-settings
@@ -23,16 +37,6 @@ sudo apt install -y vim
 sudo apt install -y feh #feh --bg-fill /path/to/directory
 sudo apt install -y fonts-font-awesome fonts-powerline fonts-ubuntu fonts-liberation2 fonts-liberation fonts-terminus fonts-cascadia-code
 sudo apt install -y aptitude
-
-stow bin
-stow bumblebee-status
-stow dunst
-stow i3
-stow kitty
-stow rofi
-stow starship
-stow tmux
-stow zsh
 
 #Install zoxide
 cd
@@ -87,6 +91,11 @@ sudo apt autoremove
 
 #Install Oh-my-zsh in ~
 cd
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
+
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/you-should-use
+
 
 printf "\e[1;32mYou can now reboot! Thanks you.\e[0m\n"
