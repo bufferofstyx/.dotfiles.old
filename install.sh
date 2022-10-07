@@ -106,4 +106,6 @@ mkdir ~/personal
 mkdir ~/work/projects
 mkdir ~/personal/projects
 
+sudo apt autoremove
+
 printf "\e[1;32mYou can now reboot! Thanks you.\e[0m\n"
