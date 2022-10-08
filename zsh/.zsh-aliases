@@ -33,6 +33,9 @@ alias chgrp='chgrp --preserve-root'
 alias update='sudo apt update -y && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y'
 alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
 
+#git shortcuts
+alias nevermind = "!git reset --hard HEAD && git clean -d -f"
+
 
 #fuck trio
 alias fuck='sudo $(history -p \!\!)'
@@ -40,6 +43,7 @@ alias fucking'sudo'
 alias fuckoff='rm -rf --preserve-root'
 
 alias ff='find . -name 2>/dev/null'
+
 
 #utility
 alias setcopy='xclip --selection c'
