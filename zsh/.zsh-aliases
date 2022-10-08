@@ -34,7 +34,7 @@ alias update='sudo apt update -y && sudo apt upgrade -y && sudo apt dist-upgrade
 alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
 
 #git shortcuts
-alias nevermind = "!git reset --hard HEAD && git clean -d -f"
+alias fuckitcba = "git reset --hard HEAD && git clean -d -f"
 
 
 #fuck trio
