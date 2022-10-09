@@ -36,6 +36,7 @@ sudo apt install -y vim
 sudo apt install -y feh
 sudo apt install -y fonts-font-awesome fonts-powerline fonts-ubuntu fonts-liberation2 fonts-liberation fonts-terminus fonts-cascadia-code
 sudo apt install -y aptitude
+sudo apt install -y ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl doxygen
 
 #Install neovim
 cd
