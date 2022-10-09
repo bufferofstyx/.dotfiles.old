@@ -2,6 +2,7 @@
 bindkey -s ^f "tt^M"
 
 # SHORTCUT aliases
+alias vim='nvim'
 alias c='clear'
 alias h='history | fzf'
 alias r='source ~/.zshrc'

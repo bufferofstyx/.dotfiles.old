@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+if [[ $# -eq 1 ]]; then
+    selected="$1" && [[ "$selected" == '.' ]] && selected="$PWD"
+else
+    selected=$(find ~/repos ~/personal/projects ~/work/projects -mindepth 1 -maxdepth 1 -type d | fzf)
+fi
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+selected_name=$(basename "$selected" | tr . _)
+
+# PERSONAL PREFERENCE
+selected_name_t=${selected_name:0:16}
+
+# This is works in all the situations.
+# If you are in a tmux session, and the selected session does exist, switch to it; if not create a new one and then switch to it.
+if [[ -n $TMUX ]]; then
+  tmux switch-client -t "$selected_name_t" 2> /dev/null \
+  || tmux new-session -ds "$selected_name_t" -c "$selected" \
+  && tmux switch-client -t "$selected_name_t"
+# If outside of a tmux session, try to create a new session; if fails attach to the selected session 
+elif [[ -z $TMUX ]]; then
+  tmux new-session -s "$selected_name_t" -c "$selected" \
+  || tmux attach -t "$selected_name_t"
+fi

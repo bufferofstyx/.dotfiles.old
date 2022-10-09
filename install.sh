@@ -37,6 +37,18 @@ sudo apt install -y feh
 sudo apt install -y fonts-font-awesome fonts-powerline fonts-ubuntu fonts-liberation2 fonts-liberation fonts-terminus fonts-cascadia-code
 sudo apt install -y aptitude
 
+#Install neovim
+cd
+git clone https://github.com/neovim/neovim.git
+cd neovim
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
+
+#Install Font
+cd /usr/share/fonts
+mkdir ComicCode
+cd ComicCode
+wget https://dtinth.github.io/comic-mono-font/ComicMono.ttf
 
 #Install zoxide
 cd
@@ -46,6 +58,7 @@ curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | 
 cd
 cd Downloads
 git clone https://github.com/Airblader/i3 i3-gaps
+
 cd i3-gaps
 mkdir -p build && cd build
 meson --prefix /usr/local
