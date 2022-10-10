@@ -47,9 +47,9 @@ sudo make install
 
 #Install Font
 cd /usr/share/fonts
-mkdir ComicCode
+sudo mkdir ComicCode
 cd ComicCode
-wget https://dtinth.github.io/comic-mono-font/ComicMono.ttf
+sudo wget https://dtinth.github.io/comic-mono-font/ComicMono.ttf
 
 #Install zoxide
 cd
