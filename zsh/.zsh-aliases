@@ -9,6 +9,9 @@ alias r='source ~/.zshrc'
 alias ls='exa --long --color=always --group-directories-first --icons'
 alias cat='batcat'
 alias zz='z -'
+alias nano='lvim'
+alias vim='lvim'
+alias setclip='xclip -selection c'
 
 #When CD LS after.
 #function cd

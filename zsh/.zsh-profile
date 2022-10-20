@@ -1,2 +1,6 @@
-export FZF_DEFAULT_OPTS="--height 100% --layout=reverse --ansi"
+export FZF_DEFAULT_OPTS="--height 100% --layout=reverse --ansi --preview='bat {}'"
+export FORGIT_COPY_CMD='xclip -selection clipboard'
+export FORGIT_LOG_FZF_OPTS='
+--bind="ctrl-e:execute(echo {} |grep -Eo [a-f0-9]+ |head -1 |xargs git show |lvim -)"
+'
 #export FZF_DEFAULT_OPTS="--height 100% --layout=reverse --ansi --preview='bat --color=always --style=grid --line-range :300 {}'"
