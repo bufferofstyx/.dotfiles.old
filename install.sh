@@ -89,7 +89,7 @@ pip install --user bumblebee-status
 
 #Install starship ~
 cd
-curl -sS https://starship.rs/install.sh | sh
+curl -sS https://starship.rs/install.sh | sh -s -- -y
 
 #Install fzf
 cd
