@@ -4,6 +4,7 @@ sudo apt update -y && sudo apt upgrade -y
 
 sudo apt install -y stow
 
+stow lvim
 stow bin
 stow bumblebee-status
 stow dunst
@@ -38,6 +39,10 @@ sudo apt install -y fonts-font-awesome fonts-powerline fonts-ubuntu fonts-libera
 sudo apt install -y aptitude
 sudo apt install -y ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl doxygen
 
+#Install lvim
+cd
+bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+
 #Install neovim
 cd
 git clone https://github.com/neovim/neovim.git
@@ -55,6 +60,18 @@ sudo wget https://dtinth.github.io/comic-mono-font/ComicMono.ttf
 #Install zoxide
 cd
 curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+
+#Install burpsuite
+cd
+cd Downloads
+wget https://portswigger.net/burp/releases/startdownload?product=community&version=2022.8.5&type=Linux -o burpsuiteinstall.sh
+bash ./burpsuiteinstall.sh
+
+#Install poetry
+cd 
+cd Downloads
+curl -sSL https://install.python-poetry.org | python3 -
+poetry self update
 
 #Install i3-gaps
 cd
@@ -78,6 +95,22 @@ curl -sS https://starship.rs/install.sh | sh
 cd
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+
+#install docker
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+sudo apt install docker-cei
+
+#Install docker compose
+sudo curl -L "https://github.com/docker/compose/releases/download/2.12.2/docker-compose-$(uname -s)-$(uname -m)"
+sudo chmod +x /usr/local/bin/docker-compose
+
+#Install glow
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
+sudo apt update && sudo apt install glow
 
 #Install sddm
 sudo apt install -y sddm
@@ -110,6 +143,9 @@ cd
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc --unattended
 chsh -s $(which zsh)
 
+#Installing poetry tab completion
+mkdir $ZSH_CUSTOM/plugins/poetry
+poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
 
 git clone https://github.com/wfxr/forgit.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/forgit
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions

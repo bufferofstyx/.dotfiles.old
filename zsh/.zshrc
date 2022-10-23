@@ -83,6 +83,7 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   you-should-use
+  poetry
   forgit
 )
 

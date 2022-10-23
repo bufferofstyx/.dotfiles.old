@@ -42,7 +42,7 @@ vim.opt.smartindent = true
 
 vim.opt.backup = false
 vim.opt.undodir = ".vim/undordir"
-vim.opt.undofile = true
+vim.opt.undofile = false
 vim.opt.incsearch = true
 
 vim.opt.colorcolumn = "100"
@@ -122,7 +122,7 @@ nnoremap("<C-k>", "<cmd>cnext<CR>zz")
 nnoremap("<C-j>", "<cmd>cprev<CR>zz")
 nnoremap("<leader>k", "<cmd>lnext<CR>zz")
 nnoremap("<leader>j", "<cmd>lprev<CR>zz")
-nnoremap("<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+nnoremap("<leader>8", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 --nnoremap("x", "<nop>")
 nnoremap("<leader>9", "<cmd>!chmod u+x %<CR>", { silent = true })
 
@@ -154,7 +154,9 @@ lvim.plugins = {
     { "glepnir/zephyr-nvim" },
     { "catppuccin/nvim" },
     { "projekt0n/github-nvim-theme" },
+    { "ellisonleao/glow.nvim" }
 }
+
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
