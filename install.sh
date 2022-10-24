@@ -4,6 +4,7 @@ sudo apt update -y && sudo apt upgrade -y
 
 sudo apt install -y stow
 
+sudo stow -vt /usr/share/fonts fonts
 stow lvim
 stow bin
 stow bumblebee-status
@@ -51,11 +52,9 @@ git checkout stable
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 
-#Install Font
-cd /usr/share/fonts
-sudo mkdir ComicCode
-cd ComicCode
-sudo wget https://dtinth.github.io/comic-mono-font/ComicMono.ttf
+#Uncompressing font
+cd /usr/share/fonts/ComicCode/
+xz -d Comic Mono Nerd Font Complete.ttf.xz
 
 #Install zoxide
 cd
@@ -64,7 +63,7 @@ curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | 
 #Install burpsuite
 cd
 cd Downloads
-wget https://portswigger.net/burp/releases/startdownload?product=community&version=2022.8.5&type=Linux -o burpsuiteinstall.sh
+wget "https://portswigger.net/burp/releases/startdownload?product=community&version=2022.8.5&type=Linux" -o burpsuiteinstall.sh
 bash ./burpsuiteinstall.sh
 
 #Install poetry
