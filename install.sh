@@ -40,10 +40,6 @@ sudo apt install -y fonts-font-awesome fonts-powerline fonts-ubuntu fonts-libera
 sudo apt install -y aptitude
 sudo apt install -y ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl doxygen
 
-#Install lvim
-cd
-bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
-
 #Install neovim
 cd
 git clone https://github.com/neovim/neovim.git
@@ -52,9 +48,13 @@ git checkout stable
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 
+#Install lvim
+cd
+curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh | bash
+
 #Uncompressing font
 cd /usr/share/fonts/ComicCode/
-xz -d Comic Mono Nerd Font Complete.ttf.xz
+xz -d -v Comic\ Mono\ Nerd\ Font\ Complete.ttf.xz
 
 #Install zoxide
 cd
@@ -63,7 +63,7 @@ curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | 
 #Install burpsuite
 cd
 cd Downloads
-wget "https://portswigger.net/burp/releases/startdownload?product=community&version=2022.8.5&type=Linux" -o burpsuiteinstall.sh
+wget -O burpsuiteinstall.sh "https://portswigger.net/burp/releases/startdownload?product=community&version=2022.8.5&type=Linux" 
 bash ./burpsuiteinstall.sh
 
 #Install poetry
