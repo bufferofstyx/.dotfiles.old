@@ -157,6 +157,8 @@ mkdir ~/work
 mkdir ~/personal
 mkdir ~/work/projects
 mkdir ~/personal/projects
+mkdir ~/notes/
+mkdir ~/notes/src/
 
 sudo apt autoremove
 

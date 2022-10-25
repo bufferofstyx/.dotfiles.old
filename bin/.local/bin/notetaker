@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+current_date=$(date +%Y-%m-%d)
+noteFilename="$HOME/notes/src/note_$current_date.md"
+
+if [ ! -f $noteFilename ]; then
+    echo "# Notes for $current_date" > $noteFilename
+fi
+
+~/.local/bin/lvim -c "norm Go" \
+    -c "norm Go## $(date +%H:%M)" \
+    -c "norm G2o" \
+    -c "startinsert" $noteFilename

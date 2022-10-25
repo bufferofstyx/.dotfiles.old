@@ -3,6 +3,7 @@
 ################################################################################
 include $HOME/.config/i3/bar.conf
 
+set $i3_scripts ~/.config/i3/scripts/
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod1
 #set $mod1 Mod1
@@ -14,7 +15,7 @@ set $myTerm kitty
 
 # Start Applications
 bindsym $mod+Return exec --no-startup-id $myTerm
-bindsym $mod+v exec --no-startup-id $myTerm -e nvim
+bindsym $mod+v exec --no-startup-id $myTerm -e ~/.local/bin/lvim
 bindsym $mod+g exec --no-startup-id google-chrome
 bindsym $mod+space exec --no-startup-id rofi -show window -show-icons
 bindsym $mod+d exec --no-startup-id rofi -show run -run-shell-command
@@ -40,6 +41,12 @@ bindsym $mod+Shift+Right move right
 #Resize Windows
 bindsym Shift+Down resize shrink width 3 px or 3 ppt
 bindsym Shift+Up resize grow width 3 px or 3 ppt
+
+#Scratchpads
+for_window [instance="i3-scratchpad*"] move scratchpad; move position center ; move floating enable; 
+bindsym $mod+n exec --no-startup-id $i3_scripts/scratchpad_script.sh "i3-scratchpad-notetaker" "kitty --name i3-scratchpad-notetaker -e ~/.local/bin/notetaker"
+bindsym $mod+Shift+Return exec --no-startup-id $i3_scripts/scratchpad_script.sh "i3-scratchpad-terminal" "kitty --name i3-scratchpad-terminal -e"
+
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
